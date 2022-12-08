@@ -1,9 +1,28 @@
 
 .sandwichLogoNav{
-    width:8%;
-    min-width: 30px;
+    /* width:8%; */
+    width: 30px;
 }
 
+/* dont use unless god makes you */
 .navIconTxtComboComp{
     flex-wrap: unset!important;
+}
+
+#sandwichCanvas{
+    overflow:hidden;
+    margin-top: -14%;
+    pointer-events: none;
+}
+
+@media screen and (max-width: 512px) {
+    #sandwichCanvas{ 
+        margin-top:  -22%;
+        margin-left: -20%;
+    }
+}
+
+.rive-wrapper{
+    width: 100%;
+    height: 290px !important;
 }

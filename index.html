@@ -2,20 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <!-- <link rel="stylesheet" href="/dist/css/app.css"> -->
     <title>StockWich</title>
 </head>
     <body>
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container navIconTxtComboComp">
-                <div class="">
-                    <img src="styles/assets/sandwich-svgrepo-com.svg" class="mb-1 sandwichLogoNav" >
-                    <a class="navbar-brand" href="#">StockWich</a>
+            <div class="container">
+                <div class="">   
+                    <a class="navbar-brand" href="#">
+                        <img src="styles/assets/sandwich-svgrepo-com.svg" class="mb-1 sandwichLogoNav" >
+                        StockWich
+                    </a>
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
                     <span class="navbar-toggler-icon"></span>
@@ -40,15 +42,18 @@
           </nav>
         <!-- Showcase -->
         <section class="showcase bg-dark">
-            <div class="container-sm">
+            <div class="container-md">
                 <div class="row">
-                    <div class="col-lg-6 text-white">
+                    <div class="col-lg-6 text-white align-content-center mt-4">
                         <h1>Stock<snap class="text-warning">Wich</snap></h1>
                         <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.</p>
-                        <a href="#" class="btn btn-primary">Get Started</a>
+                        <a id="getStarted" href="#" class="btn btn-primary mb-3">Get Started</a>
                     </div>
-                    <div class="col-lg-6">
-                        <img src="styles/assets/undraw_street_food_re_uwex.svg" class="showcase-img mt-4" width="75%" alt="showcase image">
+                    <div class="col-lg-4 justify-content-centerd">
+                        <!-- <img src="styles/assets/undraw_street_food_re_uwex.svg" class="showcase-img mt-4" width="75%" alt="showcase image"> -->
+                        <div class="rive-wrapper" id="sandwichContainer">
+                            <canvas id="sandwichCanvas" width="500" height="500"></canvas>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -62,11 +67,60 @@
                     </div>
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Email">
-                        <button class="btn btn-outline-secondary text-white bg-dark" type="button" id="button-addon2">Subcribe</button>
+                        <button class="btn btn-outline-secondary text-white bg-dark" type="button" id="newsletterSub">Subcribe</button>
                     </div>
                 </div>
             </div>
-
+        </section>
+        <!-- graph cards -->
+        <section class="graphCards mt-5">
+            <div class="container-sm">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="card text-white bg-dark mb-3" style="max-width: 38rem;">
+                            <div class="card-header">Header</div>
+                            <div class="continor me-4 ms-3">
+                                <canvas id="chartjs-line" height="160"></canvas>
+                            </div>
+                            <div class="card-body">
+                              <h5 class="card-title">Dark card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card text-white bg-dark mb-3" style="max-width: 38rem;">
+                            <div class="card-header">Header</div>
+                            <div class="continor me-4 ms-3">
+                                <canvas id="chartjs-line1" height="160"></canvas>
+                            </div>
+                            <div class="card-body">
+                              <h5 class="card-title
+                                ">Dark card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card text-white bg-dark mb-3" style="max-width: 38rem;">
+                            <div class="card-header">Header</div>
+                            <div class="continor me-4 ms-3">
+                                <canvas id="chartjs-line2" height="160"></canvas>
+                            </div>
+                            <div class="card-body">
+                              <h5 class="card-title
+                                ">Dark card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>       
+                </div>
+            </div>
+        </section>    
+        <script src="https://unpkg.com/@adminkit/core@latest/dist/js/app.js"></script>        
+        <script src="https://unpkg.com/@rive-app/canvas@1.0.79"></script>
+        <script src="/src/sandwichRiv.js"></script>
+        <script src="/src/graphMaker.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>   
     </body>
 </html>
