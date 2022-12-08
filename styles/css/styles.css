@@ -3,3 +3,7 @@
     width:8%;
     min-width: 30px;
 }
+
+.navIconTxtComboComp{
+    flex-wrap: unset!important;
+}
