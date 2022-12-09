@@ -1,12 +1,19 @@
+const encodedParams = new URLSearchParams();
+encodedParams.append("symbol", "AAPL");
+encodedParams.append("end", "2022-04-30");
+encodedParams.append("start", "2022-01-01");
+
 const options = {
-	method: 'GET',
+	method: 'POST',
 	headers: {
-		'X-RapidAPI-Key': '640dc8fa5bmsh577ad45f839ec2cp17f66ajsn29a006734b9a',
-		'X-RapidAPI-Host': 'stock-prices2.p.rapidapi.com'
-	}
+		'content-type': 'application/x-www-form-urlencoded',
+		'X-RapidAPI-Key': '1920e7b9f5mshf766c079fa85dd1p1649dcjsna4a2cb17f206',
+		'X-RapidAPI-Host': 'yfinance-stock-market-data.p.rapidapi.com'
+	},
+	body: encodedParams
 };
 
-fetch('https://stock-prices2.p.rapidapi.com/api/v1/resources/stock-prices/1mo?ticker=AAPL', options)
+fetch('https://yfinance-stock-market-data.p.rapidapi.com/price-customdate', options)
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
