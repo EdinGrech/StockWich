@@ -28,14 +28,15 @@
     height: 290px !important;
 }
 
-.card:hover{
-    transition: all 0.2s ease-in-out;
-    margin-top: -7px;
+@media screen and (min-width: 720px) {
+    .card:hover{
+        transition: all 0.2s ease-in-out;
+        margin-top: -7px;
+    }
 }
-
 /* on load lift and fade in card*/
 .card{
-    transition: all 0.2s ease-in-out;
+    transition: all 0.4s ease-in-out;
     margin-top: 20px;
     opacity: 0;
     animation: fadeIn ease 1s;
