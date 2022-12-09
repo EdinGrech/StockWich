@@ -58,6 +58,34 @@
                 </div>
             </div>
         </section>
+
+        <!-- Toast Form -->
+        <div class="container position-relative" style="z-index: 11;">
+            <div class="toast-container position-absolute start-50 translate-middle p-3" id="toastStockForm">
+              <div class="toast show" style="width: 100vw;" id="toastFormToggler">
+                <!-- add get started btn toggle for show hide toast -->
+                <div class="toast-header" >
+                  <!-- <img src="..." class="rounded me-2" alt="..."> -->
+                  <strong class="me-auto">Bootstrap</strong>
+                  <button type="button" class="btn-close bg-warning" data-bs-dismiss="toast"></button>
+                  <!-- <small>11 mins ago</small> -->
+                </div>
+                <div class="p-3">
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Email address</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword">Password</label>
+                    </div>
+                </div>
+                <!-- <div class="toast-body">
+                  Hello, world! This is a toast message.
+                </div> -->
+              </div>
+            </div>
+          </div>
         <!-- NewsLetter -->
         <section class="newsletter bg-warning">
             <div class="container-sm">
@@ -114,7 +142,8 @@
                     </div>
                 </div>      
             </div>
-        </section>    
+        </section>
+
         <script src="https://unpkg.com/@adminkit/core@latest/dist/js/app.js"></script>        
         <script src="https://unpkg.com/@rive-app/canvas@1.0.79"></script>
         <!-- <script src="/src/getStockPrices.js"></script> 10 per min 500 per month -->

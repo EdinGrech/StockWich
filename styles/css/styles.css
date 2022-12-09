@@ -49,5 +49,10 @@
     100% {opacity:1;}
 }
 
+.toastStockForm{
+    /* transform position up */
+    transform: translateY(-50%);
+    top: -50%!important;
+}
 
 
