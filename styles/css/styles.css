@@ -49,10 +49,17 @@
     100% {opacity:1;}
 }
 
-.toastStockForm{
+#toastStockForm{
     /* transform position up */
-    transform: translateY(-50%);
-    top: -50%!important;
+    margin-top: -5%!important;
 }
+
+@media screen and (max-width: 990px) {
+    #toastStockForm{
+        /* transform position up */
+        margin-top: -15%!important;
+    }
+}
+
 
 

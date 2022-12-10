@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="styles/css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
     <!-- <link rel="stylesheet" href="/dist/css/app.css"> its breaking bootstrap styles-->
     <title>StockWich</title>
 </head>
@@ -58,7 +59,6 @@
                 </div>
             </div>
         </section>
-
         <!-- Toast Form -->
         <div class="container position-relative" style="z-index: 11;">
             <div class="toast-container position-absolute start-50 translate-middle p-3" id="toastStockForm">
@@ -66,19 +66,39 @@
                 <!-- add get started btn toggle for show hide toast -->
                 <div class="toast-header" >
                   <!-- <img src="..." class="rounded me-2" alt="..."> -->
-                  <strong class="me-auto">Bootstrap</strong>
+                  <strong class="me-auto">Stock Form</strong>
                   <button type="button" class="btn-close bg-warning" data-bs-dismiss="toast"></button>
                   <!-- <small>11 mins ago</small> -->
                 </div>
                 <div class="p-3">
-                    <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                        <label for="floatingInput">Email address</label>
-                    </div>
-                    <div class="form-floating">
-                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                        <label for="floatingPassword">Password</label>
-                    </div>
+                    <!-- form to pick from list of stocks (dropdown), start date, end date and the curency (dropdown)-->
+                    <form class="row g-3">
+                        <div class="col-md-6">
+                          <label for="inputState" class="form-label">Stock</label>
+                          <select id="inputState" class="form-select">
+                            <option selected>Choose...</option>
+                            <option>...</option>
+                          </select>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="inputState" class="form-label">Currency</label>
+                          <select id="inputState" class="form-select">
+                            <option selected>Choose...</option>
+                            <option>...</option>
+                          </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="startDate">Start</label>
+                            <input id="startDate" class="form-control" type="date" />
+                        </div>
+                        <div class="col-md-6">
+                            <label for="startDate">End</label>
+                            <input id="startDate" class="form-control" type="date" />
+                        </div>
+                        <div>
+                          <button type="submit" class="btn btn-primary">View in Dash</button>
+                        </div>
+                      </form>        
                 </div>
                 <!-- <div class="toast-body">
                   Hello, world! This is a toast message.
@@ -105,7 +125,7 @@
             <div class="container-sm">
                 <div class="card-group row">
                     <div class="col-lg-4">
-                        <div class="card bg-dark mb-3 border-warning border-1" style="max-width: 38rem;">
+                        <div class="card bg-dark mb-3 border-warning border-1" style="max-width: 44rem;">
                             <div class="card-header text-white"><h4>Header</h4></div>
                             <div class="continor me-4 ms-3">
                                 <canvas id="chartjs-line" height="160"></canvas>
@@ -117,7 +137,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="card bg-dark mb-3 border-warning border-1" style="max-width: 38rem;">
+                        <div class="card bg-dark mb-3 border-warning border-1" style="max-width: 44rem;">
                             <div class="card-header text-white"><h4>Header</h4></div>
                             <div class="continor me-4 ms-3 mb-4">
                                 <canvas id="chartjs-line1" height="165"></canvas>
@@ -129,7 +149,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="card bg-dark mb-3 border-warning border-1" style="max-width: 38rem;">
+                        <div class="card bg-dark mb-3 border-warning border-1" style="max-width: 44rem;">
                             <div class="card-header text-white"><h4>Header</h4></div>
                             <div class="continor me-4 ms-3">
                                 <canvas id="chartjs-line2" height="160"></canvas>
@@ -143,7 +163,33 @@
                 </div>      
             </div>
         </section>
-
+        <!-- about with svg assets -->
+        <section class="about">
+            <div class="container-sm">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card bg-dark mb-3 border-warning border-1" style="max-width: 44rem;">
+                            <div class="card-header text-white"><h4>Header</h4></div>
+                            <div class="card-body bg-warning text-dark">
+                                <h4 class="card-title">Dark card title</h4>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <img src="/styles/assets/undraw_tasting_re_3k5a.svg" class="card-img-top pe-2" style="margin-bottom: -3%;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card bg-dark mb-3 border-warning border-1" style="max-width: 44rem;">
+                            <div class="card-header text-white"><h4>Header</h4></div>
+                            <img src="/styles/assets/undraw_stepping_up_g6oo.svg" class="card-img-top pe-2">
+                            <div class="card-body bg-warning text-dark">
+                                <h4 class="card-title">Dark card title</h4>  
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <script scr="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
         <script src="https://unpkg.com/@adminkit/core@latest/dist/js/app.js"></script>        
         <script src="https://unpkg.com/@rive-app/canvas@1.0.79"></script>
         <!-- <script src="/src/getStockPrices.js"></script> 10 per min 500 per month -->
