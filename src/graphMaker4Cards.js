@@ -3,18 +3,18 @@ new Chart(document.getElementById("chartjs-line"), {
     data: {
       labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
       datasets: [{
-        label: "Sales ($)",
+        label: "2022 MT(€)",
         fill: true,
         backgroundColor: "transparent",
         borderColor: "#007bff",
-        data: [2115, 1562, 1584, 1892, 1487, 2223, 2966, 2448, 2905, 3838, 2917, 3327]
+        data: [62.00, 61.92, 63.54, 62.51, 61.97, 61.90, 61.68, 61.90, 63.36, 62.95, 62.95,]
       }, {
-        label: "Orders",
+        label: "2021 MT(€)",
         fill: true,
         backgroundColor: "transparent",
         borderColor: "#adb5bd",
         borderDash: [4, 4],
-        data: [958, 724, 629, 883, 915, 1214, 1476, 1212, 1554, 2128, 1466, 1827]
+        data: [53.03, 51.46, 55.71, 55.58, 54.77, 56.35, 57.33, 57.45, 60.04, 62.76, 62.50, 62.26]
       }]
     },
     options: {

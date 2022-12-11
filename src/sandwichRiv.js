@@ -21,7 +21,7 @@ function resizeBy(){
 
 
 const sandwich = new rive.Rive({
-    src: 'riv/sandwich_.riv',
+    src: 'riv/sandwich__.riv',
     canvas: document.getElementById('sandwichCanvas'),
     autoplay: true,
     animations: "assemble",
@@ -37,16 +37,23 @@ const sandwich = new rive.Rive({
         /*
             quick test to see if the inputs are working
         */
-        btn = document.getElementById('getStarted');
-        btn.onclick = (e) => {
+        document.getElementById('getStarted').onclick = (e) => {
+            e.preventDefault();
+            Filling_tog.fire();
+            document.getElementById("toastFormToggler").classList.remove("hide");
+            document.getElementById("toastFormToggler").classList.add("show");
+        }
+
+        document.getElementById("toastFormCloser").onclick = (e) => {
             e.preventDefault();
             Filling_tog.fire();
         }
 
-        btn2 = document.getElementById("newsletterSub");
-        btn2.onclick = (e) => {
+        document.getElementById("newsletterSub").onclick = (e) => {
             e.preventDefault();
             Bread_tog.fire();
         }
     }
 });
+
+

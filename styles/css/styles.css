@@ -50,8 +50,7 @@
 }
 
 #toastStockForm{
-    /* transform position up */
-    margin-top: -5%!important;
+    margin-top: 7%!important;
 }
 
 @media screen and (max-width: 990px) {
@@ -61,5 +60,20 @@
     }
 }
 
+#toastFormToggler{
+    width:70vw;
+}
+
+@media screen and (max-width: 990px) {
+    #toastFormToggler{
+        width: 100vw;
+    }
+}
+
+/* removed link styling */
+.docLink{
+    text-decoration: none;
+    color: #fff;
+}
 
 
