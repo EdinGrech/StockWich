@@ -1,5 +1,6 @@
 
-function getStockPrices(symbol, start, end) {
+
+export function getStockPrices(symbol, start, end) {
 	const encodedParams = new URLSearchParams();
 	encodedParams.append("symbol", symbol);
 	encodedParams.append("end", end);
