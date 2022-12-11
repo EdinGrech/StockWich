@@ -39,9 +39,9 @@ new Chart(document.getElementById("chartjs-line"), {
   new Chart(document.getElementById("chartjs-line1"), {
     type: "doughnut",
       data: {
-        labels: ["Social", "Search Engines", "Direct", "Other"],
+        labels: ["Bread", "Vegrables", "Cheese", "Condoments"],
         datasets: [{
-          data: [260, 125, 54, 146],
+          data: [260, 125, 146, 54],
           backgroundColor: [
             window.theme.primary,
             window.theme.success,
@@ -62,18 +62,18 @@ new Chart(document.getElementById("chartjs-line"), {
     data: {
       labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
       datasets: [{
-        label: "Sales ($)",
+        label: "2022 EU(€)",
         fill: true,
         backgroundColor: "transparent",
         borderColor: "#007bff",
-        data: [2115, 1562, 1584, 1892, 1487, 2223, 2966, 2448, 2905, 3838, 2917, 3327]
+        data: [330.91, 344.31, 441.35, 457.76, 494.18, 434.93, 376.32, 378.06, 422.11]
       }, {
-        label: "Orders",
+        label: "2021 EU(€)",
         fill: true,
         backgroundColor: "transparent",
         borderColor: "#adb5bd",
         borderDash: [4, 4],
-        data: [958, 724, 629, 883, 915, 1214, 1476, 1212, 1554, 2128, 1466, 1827]
+        data: [237.60, 239.25, 229.55, 234.55, 244.80	, 237.05, 248.97, 275.68, 287.14, 305.68, 332.03, 333.52]
       }]
     },
     options: {

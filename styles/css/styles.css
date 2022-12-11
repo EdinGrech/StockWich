@@ -1,4 +1,8 @@
 
+body{
+    width: 100%;
+}
+
 .sandwichLogoNav{
     /* width:8%; */
     width: 30px;
@@ -12,6 +16,7 @@
 #sandwichCanvas{
     overflow:hidden;
     margin-top: -14%;
+    margin-left: -2%;
     pointer-events: none;
 }
 
@@ -19,7 +24,7 @@
     #sandwichCanvas{ 
         /* justify-content: center; */
         margin-top:  -22%;
-        margin-left: -14%;
+        margin-left: -16%;
     }
 }
 
