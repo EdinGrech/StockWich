@@ -76,4 +76,8 @@
     color: #fff;
 }
 
+.toast{
+    animation: fadeIn ease 0.4s;
+}
+
 
