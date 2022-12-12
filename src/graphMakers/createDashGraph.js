@@ -14,26 +14,26 @@ function createChart(){
         console.log(element);
     });
     console.log(info.stockDataClose);
-
+    document.getElementById("mainGraphTit").innerHTML = info.Stock + " in " + info.Currency;
     new Chart(document.getElementById("dashMainGraph"), {
         type: "line",
         data: {
             labels: info.stockDataLabelsDate,
             datasets: [{
-                label: info.Stock + " " + info.Currency,
+                label: "Closing Price",
                 fill: true,
                 backgroundColor: "transparent",
                 borderColor: "#007bff",
-                data: info.stockDataClose
+                data: info.stockDataClose,
             }, 
-            // {
-            //     label: "2021 MT(€)",
-            //     fill: true,
-            //     backgroundColor: "transparent",
-            //     borderColor: "#adb5bd",
-            //     borderDash: [4, 4],
-            //     data: [53.03, 51.46, 55.71, 55.58, 54.77, 56.35, 57.33, 57.45, 60.04, 62.76, 62.50, 62.26]
-            // }
+            {
+                label: "Opening Price",
+                fill: true,
+                backgroundColor: "transparent",
+                borderColor: "rgb(178, 49, 218)",
+                borderDash: [18, 3],
+                data: info.stockDataOpen,
+            }
         ]
         },
         options: {
@@ -41,17 +41,23 @@ function createChart(){
                 xAxes: [{
                     reverse: true,
                     gridLines: {
-                        color: "rgba(0,0,0,0.0.05)"
+                        color: "rgb(207, 159, 2, 0.2)",
+                    },
+                    ticks: {
+                        fontColor: "#000000"
                     }
                 }],
                 yAxes: [{
                     borderDash: [5, 5],
                     gridLines: {
-                        color: "rgba(0,0,0,0)",
+                        color: "rgb(207, 159, 2, 0.9)",
                         fontColor: "#fff"
+                    },
+                    ticks: {
+                        fontColor: "#000000"
                     }
                 }]
-            }
+            },
         }
     });
 }
@@ -96,16 +102,18 @@ function constructData(){
     //get data from json
     let stockDataLabelsDate = [];
     let stockDataClose = [];
+    let stockDataOpen = [];
     for (let i = 0; i < stockData.data.length; i++) {
         stockDataLabelsDate.push(stockData.data[i].Date);
         //change date format
         stockDataLabelsDate[i] = new Date(stockDataLabelsDate[i]).toLocaleDateString();
         stockDataClose.push(stockData.data[i].Close);
+        stockDataOpen.push(stockData.data[i].Open);
     }
     console.log(stockDataLabelsDate);
     console.log(stockDataClose);
 
-    return {stockDataLabelsDate, stockDataClose, Stock, Currency, startDate, endDate};
+    return {stockDataLabelsDate, stockDataClose, stockDataOpen, Stock, Currency, startDate, endDate};
 }
 
 createChart();
