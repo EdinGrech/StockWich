@@ -16,9 +16,11 @@ export function getStockPrices(symbol, start, end) {
 		body: encodedParams
 	};
 
-	return fetch('https://yfinance-stock-market-data.p.rapidapi.com/price-customdate', options)
-		.then(response => response.json())
-		.catch(err => console.error(err));
+	try {
+		return fetch('https://yfinance-stock-market-data.p.rapidapi.com/price-customdate', options)
+	} catch (error) {
+		return error;
+	}
 }
 
 // {

@@ -6,7 +6,7 @@ window.addEventListener('resize', () => { resizeBy(); }, false);
 function resizeBy(){
     const canvas = document.getElementById('sandwichCanvas');
     const div = document.getElementById('sandwichDiv');
-    console.log(window.innerWidth);
+    //console.log(window.innerWidth);
     if (window.innerWidth < 514) {
         canvas.width = window.innerWidth;
         canvas.height = window.innerWidth;

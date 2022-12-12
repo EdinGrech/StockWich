@@ -1,6 +1,6 @@
 import { getStockPrices } from './getStockPrices.js';
 
-document.getElementById("loadGraphFromForm").addEventListener("click", function() {
+document.getElementById("loadGraphFromForm").addEventListener("click", async function() {
     //get form data
     let formData = getFormData();
     if(!formData){return};
@@ -9,50 +9,33 @@ document.getElementById("loadGraphFromForm").addEventListener("click", function(
     let startDate = formData[0];
     let endDate = formData[1];
 
+    //save data to local storage
+    localStorage.setItem('Stock', Stock);
+    localStorage.setItem('Currency', Currency);
+    localStorage.setItem('startDate', startDate);
+    localStorage.setItem('endDate', endDate);
+
     // get data from API
-    let stockData = getStockPrices(Stock, startDate, endDate);
+    let stockData = await getStockPrices(Stock, startDate, endDate);
     console.log(stockData);
 
-    //parse json
-    stockData.then(data => JSON.parse(data));
+    //parse responce
+    stockData = await stockData.json();
     console.log(stockData);
 
-    //jason data
-    // {
-        // data{
-        //     [
-            //     {
-            //         "Adj Close": 156.9399871826,
-            //         "Close": 157.6499938965,
-            //         "Date": 1651190400000,
-            //         "High": 166.1999969482,
-            //         "Low": 157.25,
-            //         "Open": 161.8399963379,
-            //         "Volume": 131747600
-            //     }
-        //     ],
-        //     "message": "Success",
-        //     "status": 200
-        // }
-    // }
+    //save data to local storage
+    localStorage.setItem('stockData', JSON.stringify(stockData));
+    let test = localStorage.getItem('stockData');
+    console.log(test);
+    //stockData.then(data => localStorage.setItem('stockData', JSON.stringify(data)));
 
-    //get data from json
-    let stockDataLabelsDate = [];
-    let stockDataClose = [];
-    stockData.then(data => {
-        for (let i = 0; i < data.data.length; i++) {
-            stockDataLabelsDate.push(data.data[i].Date);
-            //change date format
-            stockDataLabelsDate[i] = new Date(stockDataLabelsDate[i]).toLocaleDateString();
-            stockDataClose.push(data.data[i].Close);
-        }
-    });
-    console.log(stockDataLabelsDate);
-    console.log(stockDataClose);
 
-    //change to dashboard page
-    document.location.href="/Dash.html";
-    // create chart
+    //wait 300
+    setTimeout(function(){
+        //change to dashboard page
+        document.location.href="/Dash.html";
+    }, 300);
+    
     
 });
 
