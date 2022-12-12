@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/css/styles.css">
+    <link rel="stylesheet" href="/styles/css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
@@ -72,19 +72,35 @@
                 </div>
                 <div class="p-3">
                     <!-- form to pick from list of stocks (dropdown), start date, end date and the curency (dropdown)-->
-                    <form class="row g-3">
+                    <div class="row g-3">
                         <div class="col-md-6">
                           <label for="Stock" class="form-label">Stock</label>
                           <select id="Stock" class="form-select">
-                            <option selected>Choose...</option>
-                            <option>...</option>
+                            <option selected>Class III Milk Futures,Dec-2022 (DC=F)</option>
+                            <option>Class IV Milk Futures,May-2023 (GDK=F)</option>
+                            <option>Chicago SRW Wheat Futures,Mar-2 (ZW=F)</option>
+                            <option>KC HRW Wheat Futures,Mar-2023 (KE=F)</option>
+                            <option>KC HRW Wheat TAS Futures,Mar-20 (KET=F)</option>
+                            <option>Mini-sized Chicago SRW Wheat Fu (XW=F)</option>
+                            <option>Block Cheese Futures,Dec-2022 (BLK=F)</option>
+                            <option>Rashtriya Chemicals and Fertilizers Limited (RCF.NS)</option>
+                            <option>Gujarat Narmada Valley Fertilizers & Chemicals Limited (GNFC.NS)</option>
                           </select>
                         </div>
                         <div class="col-md-6">
                           <label for="Currency" class="form-label">Currency</label>
                           <select id="Currency" class="form-select">
-                            <option selected>Choose...</option>
-                            <option>...</option>
+                            <option selected>EUR €</option>
+                            <option>CAD $</option>
+                            <option>USD $</option>
+                            <option>AUD $</option>
+                            <option>BTC ₿</option>
+                            <option>GPB £</option>
+                            <option>KWD د.ك</option>
+                            <option>YEN ¥</option>
+                            <option>CNY ¥</option>
+                            <option>INR ₹</option>
+                            <option>RUB ₽</option>
                           </select>
                         </div>
                         <div class="col-md-6">
@@ -96,9 +112,9 @@
                             <input id="endDate" class="form-control" type="date" />
                         </div>
                         <div>
-                          <button type="submit" id="loadGraphFromForm" class="btn btn-primary">View in Dash</button>
+                          <button id="loadGraphFromForm" class="btn btn-primary">View in Dash</button>
                         </div>
-                    </form>        
+                    </div>        
                 </div>
               </div>
             </div>
@@ -201,14 +217,14 @@
               <a class="text-warning" href="https://mdbootstrap.com/" style="text-decoration: none;">Made with &lt;3 by A guy being A dude</a>
             </div>
             <!-- Copyright -->
-          </footer>
+        </footer>
             
         <script scr="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
         <script src="https://unpkg.com/@adminkit/core@latest/dist/js/app.js"></script>        
         <script src="https://unpkg.com/@rive-app/canvas@1.0.79"></script>
-        <script src="/src/sandwichRiv.js"></script>
-        <script src="/src/graphMaker4Cards.js"></script>
-        <script type="module" src="/src/getDataFromForm.js"></script>
+        <script src="/src/riv/sandwichRiv.js"></script>
+        <script src="/src/graphMakers/graphMaker4Cards.js"></script>
+        <script type="module" src="/src/apiGetters/getDataFromForm.js"></script>
         <!-- scripts interfearing with eachother using adminKit for all layout js and graph plotting -->
         <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>    -->
     </body>
