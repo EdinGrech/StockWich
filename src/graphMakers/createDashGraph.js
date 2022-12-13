@@ -1,5 +1,6 @@
 import { convertCurrency } from "../apiGetters/curencyConvert.js";
 
+
 function createChart(){
     let info = constructData();
     console.log(info);
@@ -180,13 +181,9 @@ function constructData(){
 function setCanvasSize(){
     //clear width and height
     let canvas = document.getElementById("dashMainGraph");
-    canvas.width = 0;
-    canvas.height = 0;
     canvas.width = window.innerWidth;
     canvas.height = (2*window.innerHeight)/3;
     canvas = document.getElementById("dashMainGraphBar");
-    canvas.width = 0;
-    canvas.height = 0;
     canvas.width = window.innerWidth;
     canvas.height = (2*window.innerHeight)/3;
 }
@@ -199,3 +196,52 @@ window.addEventListener("resize", function(){
     mainGraphs.mainBar.destroy();
     mainGraphs = createChart();
 });
+
+document.getElementById("stockLineOpen").onclick = function(){
+    //toggle Opening Price from graphLineData
+    mainGraphs.mainLine.data.datasets[1].hidden = !mainGraphs.mainLine.data.datasets[1].hidden;
+    mainGraphs.mainLine.update();
+    //change  icon class to show if hidden or not
+    if(mainGraphs.mainLine.data.datasets[1].hidden){
+        document.getElementById("stockLineOpenIco").classList = "fs-6 bi-eye-slash";
+    }else{
+        document.getElementById("stockLineOpenIco").classList = "fs-6 bi-eye";
+    }
+}
+
+document.getElementById("stockLineHigh").onclick = function(){
+    //toggle High Price from graphLineData
+    mainGraphs.mainLine.data.datasets[2].hidden = !mainGraphs.mainLine.data.datasets[2].hidden;
+    mainGraphs.mainLine.update();
+    //change  icon class to show if hidden or not
+    if(mainGraphs.mainLine.data.datasets[2].hidden){
+        document.getElementById("stockLineHighIco").classList = "fs-6 bi-eye-slash";
+    }else{
+        document.getElementById("stockLineHighIco").classList = "fs-6 bi-eye";
+    }
+}
+
+document.getElementById("stockLineLow").onclick = function(){
+    //toggle Low Price from graphLineData
+    mainGraphs.mainLine.data.datasets[3].hidden = !mainGraphs.mainLine.data.datasets[3].hidden;
+    mainGraphs.mainLine.update();
+    //change  icon class to show if hidden or not
+    if(mainGraphs.mainLine.data.datasets[3].hidden){
+        document.getElementById("stockLineLowIco").classList = "fs-6 bi-eye-slash";
+    }else{
+        document.getElementById("stockLineLowIco").classList = "fs-6 bi-eye";
+    }
+}
+
+document.getElementById("stockLineClose").onclick = function(){
+    //toggle Low Price from graphLineData
+    mainGraphs.mainLine.data.datasets[0].hidden = !mainGraphs.mainLine.data.datasets[0].hidden;
+    mainGraphs.mainLine.update();
+    //change  icon class to show if hidden or not
+    if(mainGraphs.mainLine.data.datasets[0].hidden){
+        document.getElementById("stockLineCloseIco").classList = "fs-6 bi-eye-slash";
+    }else{
+        document.getElementById("stockLineCloseIco").classList = "fs-6 bi-eye";
+    }
+}
+
