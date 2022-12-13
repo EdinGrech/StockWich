@@ -71,7 +71,7 @@ export async function convertCurrency(toCurrency) {
             // if(data.timestamp*1000 + 36000000 < Date.now()){
             //     throw new Error("Exchange rates are older than 3 days");
             // }
-            return await { exchangeRate, time };
+            return { exchangeRate, time };
         }
         else{
             throw new Error("No exchange rates in local storage");

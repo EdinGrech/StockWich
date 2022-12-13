@@ -122,14 +122,15 @@
                                     </li>
                                     <li class="pt-2">
                                         <div class="" style="width: 50px;">
-                                            <label for="startDate" class="text-warning">Start</label>
-                                            <input id="startDate" class="form-control" type="date" />
+                                            <label for="startDate2" class="text-warning">Start</label>
+                                            <!-- WTF IS THIS BUG ^^ id dose not match and it works if it matches it breaks pls send help im about to loose my shit-->
+                                            <input id="startDate2" class="form-control" type="date" />
                                         </div>
                                     </li>
                                     <li class="pt-2">
                                         <div class="" style="width: 50px;">
-                                            <label for="endDate" class="text-warning">End</label>
-                                            <input id="endDate" class="form-control" type="date" />
+                                            <label for="endDate2" class="text-warning">End</label>
+                                            <input id="endDate2" class="form-control" type="date" />
                                         </div>
                                     </li>
                                     <li class="pt-sm-2 pt-4">
@@ -154,8 +155,9 @@
                 <div class="row">
                     <div class="col">
                         <h1 class="display-5" id="mainGraphTit"></h1>
+                        <p style="font-size: 9px;" id="mainGraphSubTit"></p>
                     </div>
-                    <!-- Toast -->
+                <!-- Toast -->
                     <div class="container position-relative" style="z-index: 11;">
                         <div style="margin-top: 110px!important;" class="toast-container position-absolute start-50 translate-middle p-3" id="toastStockForm">
                           <div class="toast hide" id="toastFormToggler">
@@ -208,7 +210,14 @@
                                         <input id="endDate" class="form-control" type="date" />
                                     </div>
                                     <div>
-                                      <button id="loadGraphFromForm" class="btn btn-primary">View in Dash</button>
+                                        <div>
+                                            <button id="loadGraphFromForm" class="btn btn-primary">View in Dash</button>
+                                        </div>
+                                        <div id="startLoading" class="d-none justify-content-center">
+                                            <div class="spinner-border" role="status">
+                                              <span class="visually-hidden">Loading...</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>        
                             </div>

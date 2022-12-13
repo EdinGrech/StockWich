@@ -8,7 +8,8 @@ function createChart(){
     let curAdjustBack2USD = convertCurrency("USD").exchangeRate;
     let _ = convertCurrency(info.Currency);
     let exchangeRate = _.exchangeRate;
-    let exchangerRateTime = _.time; //display info as some point
+    console.log(_.time);
+    //let exchangerRateTime = new Date(_.time.toLocaleDateString()); //display info as some point
     info.stockDataClose.forEach(element => { 
         element = element / curAdjustBack2USD;
         element = element * exchangeRate;
@@ -16,7 +17,7 @@ function createChart(){
     });
     console.log(info.stockDataClose);
     document.getElementById("mainGraphTit").innerHTML = info.Stock + " in " + info.Currency;
-
+    document.getElementById("mainGraphSubTit").innerHTML = "From " + info.startDate + " to " + info.endDate + " currency exchange rate last updated "; //+ exchangerRateTime;
     setCanvasSize()
     let mainLine = new Chart(document.getElementById("dashMainGraph"), {
         type: "line",

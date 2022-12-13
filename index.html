@@ -112,7 +112,14 @@
                             <input id="endDate" class="form-control" type="date" />
                         </div>
                         <div>
-                          <button id="loadGraphFromForm" class="btn btn-primary">View in Dash</button>
+                            <div>
+                                <button id="loadGraphFromForm" class="btn btn-primary">View in Dash</button>
+                            </div>
+                            <div id="startLoading" class="d-none justify-content-center">
+                                <div class="spinner-border" role="status">
+                                  <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
                         </div>
                     </div>        
                 </div>
