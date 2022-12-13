@@ -7,9 +7,11 @@ async function createChart(){
     
     //call currency convertor
     info = await localCurrencyConvertor(info);
+    let extra = info._;
+    info = info.info;
 
     document.getElementById("mainGraphTit").innerHTML = info.Stock + " in " + info.Currency;
-    document.getElementById("mainGraphSubTit").innerHTML = "From " + info.startDate + " to " + info.endDate + " currency exchange rate last updated "; //+ exchangerRateTime;
+    document.getElementById("mainGraphSubTit").innerHTML = "From " + info.startDate + " to " + info.endDate + " currency exchange rate last updated "+ new Date(extra.time*1000).toLocaleDateString() + " at " + new Date(extra.time).toLocaleTimeString();
     setCanvasSize()
     let mainLine = new Chart(document.getElementById("dashMainGraph"), {
         type: "line",
@@ -115,7 +117,7 @@ async function localCurrencyConvertor(info){
     //convert currency
     let curAdjustBack2USD = await convertCurrency("USD");
     let _ = await convertCurrency(info.Currency);
-    console.log(info.Currency + " " +  _ + " " + _.exchangeRate + " " + _.time + " " + curAdjustBack2USD.exchangeRate);
+    console.log(info.Currency + " " + _ + " " + _.exchangeRate + " " + _.time + " " + curAdjustBack2USD.exchangeRate);
     let exchangeRate = _.exchangeRate;
     console.log(_.time);
 
@@ -159,7 +161,7 @@ async function localCurrencyConvertor(info){
     );
 
     console.log(info.stockDataClose+ " " + info.stockDataOpen + " " + info.stockDataHigh + " " + info.stockDataLow);
-    return info;
+    return {info, _};
 }
 
 function constructData(){

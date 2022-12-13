@@ -104,8 +104,8 @@
                                 <ul class="collapse nav flex-column ms-1 animationSmoother" id="submenu2" data-bs-parent="#menu">
                                     <li class="pe-2">
                                         <div class="" style="width: 50px;">
-                                            <label for="Currency" class="form-label text-warning dropDownMargenCorrect">Currency</i></label>
-                                            <select id="Currency" class="form-select">
+                                            <label for="CurrencyUpdater" class="form-label text-warning dropDownMargenCorrect">Currency</i></label>
+                                            <select id="CurrencyUpdater" class="form-select">
                                               <option selected>EUR €</option>
                                               <option>CAD $</option>
                                               <option>USD $</option>
@@ -122,20 +122,20 @@
                                     </li>
                                     <li class="pt-2">
                                         <div class="" style="width: 50px;">
-                                            <label for="startDate2" class="text-warning">Start</label>
-                                            <!-- WTF IS THIS BUG ^^ id dose not match and it works if it matches it breaks pls send help im about to loose my shit-->
-                                            <input id="startDate2" class="form-control" type="date" />
+                                            <label for="startDateUpdater" class="text-warning">Start</label>
+                                            <!-- correction I was monkey-->
+                                            <input id="startDateUpdater" class="form-control" type="date" data-bs-toggle="tooltip" data-bs-placement="right" title="Stay in the limit of your initial request"/>
                                         </div>
                                     </li>
                                     <li class="pt-2">
                                         <div class="" style="width: 50px;">
-                                            <label for="endDate2" class="text-warning">End</label>
-                                            <input id="endDate2" class="form-control" type="date" />
+                                            <label for="endDateUpdater" class="text-warning">End</label>
+                                            <input id="endDateUpdater" class="form-control" type="date" data-bs-toggle="tooltip" data-bs-placement="right" title="Stay in the limit of your initial request"/>
                                         </div>
                                     </li>
                                     <li class="pt-sm-2 pt-4">
                                         <label class="d-none d-sm-block text-warning pb-1">Update Graph</label>
-                                        <button class="btn btn-primary" style="width: 50px;"><i class="bi-upload"></i></button>
+                                        <button id="changeGraphWithNewProperties" class="btn btn-primary" style="width: 50px;"><i class="bi-upload"></i></button>
                                     </li>
                                 </ul>
                             </li>
@@ -144,7 +144,7 @@
                                     <i class="fs-4 bi-plus-square"></i> <span class="ms-1 d-none d-sm-inline">New Stock Graph</span></a>
                             </li>
                             <li>
-                                <a id="getStarted" data-bs-toggle="collapse" class="nav-link px-0 align-middle sideBarOpt">
+                                <a id="removeDataStored" data-bs-toggle="collapse" class="nav-link px-0 align-middle sideBarOpt">
                                     <i class="fs-4 bi-x-square"></i> <span class="ms-1 d-none d-sm-inline">Remove Graphs</span></a>
                             </li>
                         </ul>
@@ -234,5 +234,6 @@
     <script type="module" src="/src/graphMakers/createDashGraph.js"></script>
     <script type="module" src="src/apiGetters/getDataFromForm.js"></script>
     <script src="/src/util/toastViewerDetatched.js"></script>
+    <script src="/src/formInfoGetter/getProperties2UpdateGraph.js"></script>
 </body>
 
