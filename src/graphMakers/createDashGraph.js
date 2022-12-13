@@ -1,21 +1,13 @@
 import { convertCurrency } from "../apiGetters/curencyConvert.js";
 
 
-function createChart(){
+async function createChart(){
     let info = constructData();
     console.log(info);
     
-    let curAdjustBack2USD = convertCurrency("USD").exchangeRate;
-    let _ = convertCurrency(info.Currency);
-    let exchangeRate = _.exchangeRate;
-    console.log(_.time);
-    //let exchangerRateTime = new Date(_.time.toLocaleDateString()); //display info as some point
-    info.stockDataClose.forEach(element => { 
-        element = element / curAdjustBack2USD;
-        element = element * exchangeRate;
-        console.log(element);
-    });
-    console.log(info.stockDataClose);
+    //call currency convertor
+    info = await localCurrencyConvertor(info);
+
     document.getElementById("mainGraphTit").innerHTML = info.Stock + " in " + info.Currency;
     document.getElementById("mainGraphSubTit").innerHTML = "From " + info.startDate + " to " + info.endDate + " currency exchange rate last updated "; //+ exchangerRateTime;
     setCanvasSize()
@@ -119,6 +111,57 @@ function createChart(){
       return {mainLine, mainBar};
 }
 
+async function localCurrencyConvertor(info){
+    //convert currency
+    let curAdjustBack2USD = await convertCurrency("USD");
+    let _ = await convertCurrency(info.Currency);
+    console.log(info.Currency + " " +  _ + " " + _.exchangeRate + " " + _.time + " " + curAdjustBack2USD.exchangeRate);
+    let exchangeRate = _.exchangeRate;
+    console.log(_.time);
+
+    //let exchangerRateTime = new Date(_.time.toLocaleDateString()); //display info as some point
+    console.log(info.stockDataClose + " " + info.stockDataOpen + " " + info.stockDataHigh + " " + info.stockDataLow);
+
+    info.stockDataClose.forEach(element => { 
+        let elementAdj = element / curAdjustBack2USD.exchangeRate;
+        elementAdj = element * exchangeRate;
+        console.log(elementAdj);
+        //replace element in array
+        info.stockDataClose[info.stockDataClose.indexOf(element)] = elementAdj;
+    });
+    console.log(info.stockDataClose);
+
+    info.stockDataOpen.forEach(element => {
+        let elementAdj = element / curAdjustBack2USD.exchangeRate;
+        elementAdj = element * exchangeRate;
+        console.log(elementAdj);
+        //replace element in array
+        info.stockDataOpen[info.stockDataOpen.indexOf(element)] = elementAdj;
+    }
+    );
+
+    info.stockDataHigh.forEach(element => {
+        let elementAdj = element / curAdjustBack2USD.exchangeRate;
+        elementAdj = element * exchangeRate;
+        console.log(elementAdj);
+        //replace element in array
+        info.stockDataHigh[info.stockDataHigh.indexOf(element)] = elementAdj;
+    }
+    );
+
+    info.stockDataLow.forEach(element => {
+        let elementAdj = element / curAdjustBack2USD.exchangeRate;
+        elementAdj = element * exchangeRate;
+        console.log(elementAdj);
+        //replace element in array
+        info.stockDataLow[info.stockDataLow.indexOf(element)] = elementAdj;
+    }
+    );
+
+    console.log(info.stockDataClose+ " " + info.stockDataOpen + " " + info.stockDataHigh + " " + info.stockDataLow);
+    return info;
+}
+
 function constructData(){
 
     //get data from local storage
@@ -189,7 +232,7 @@ function setCanvasSize(){
     canvas.height = (2*window.innerHeight)/3;
 }
 
-let mainGraphs = createChart();
+let mainGraphs = await createChart();
 
 window.addEventListener("resize", function(){
     setCanvasSize();
