@@ -9,11 +9,10 @@
     <!-- <link rel="stylesheet" href="/dist/css/app.css"> its breaking bootstrap styles-->
     <title>StockWich</title>
 </head>
-<body style="box-sizing: border-box;
-user-select: none;">
+<body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-md">
+        <div class="container-sm">
             <div class="">   
                 <a class="navbar-brand" href="#">
                     <img src="styles/assets/sandwich-svgrepo-com.svg" class="mb-1 sandwichLogoNav" >
@@ -43,7 +42,7 @@ user-select: none;">
       </nav>
 
     <!-- Wrapper container -->
-    <div class="container-md py-4">
+    <div class="container-sm py-4" style="margin-top: 3%;">
 
         <!-- Bootstrap 5 starter form -->
         <form id="contactForm" data-sb-form-api-token="API_TOKEN">
@@ -81,7 +80,7 @@ user-select: none;">
         </div>
     
         <!-- Form submit button -->
-        <div id="wildBtnCont" class="d-grid">
+        <div id="wildBtnCont" class="d-grid border-1">
             <button class="btn-lg btn-warning disabled" style="position: absolute; transform: translate(-50%, -50%);top: 57%;left: 50%;width: 250px!important;" id="runaway-btn">Submit</button>
         </div>
     

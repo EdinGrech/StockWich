@@ -7,13 +7,13 @@ const animateMove = (element, prop, pixels) =>
   anime({
     targets: element,
     [prop]: `${pixels}px`,
-    easing: "easeOutCirc"
+    easing: "easeOutCirc",
   });
 
 ["mouseover", "click"].forEach(function (el) {
 //add checking condition here
   button.addEventListener(el, function (event) {
-    let left = getRandomNumber(cont.offsetWidth - this.offsetWidth)+cont.offsetLeft;
+    let left = getRandomNumber(cont.offsetWidth - this.offsetWidth)+cont.offsetLeft + this.offsetWidth/2;
     if(window.innerWidth > 768) {
     animateMove(this, "left", left).play();
     }
