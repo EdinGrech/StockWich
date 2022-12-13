@@ -51,48 +51,68 @@
                         <span class="fs-5 d-none d-sm-inline">Menu</span>
                     </a>
                         <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a href="#" class="nav-link align-middle px-0 sideBarOpt">
                                     <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
                                 </a>
-                            </li>
+                            </li> -->
                             <li>
                                 <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle sideBarOpt">
                                     <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
-                                <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                                <!-- <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
                                     <li class="w-100">
                                         <a href="#" class="nav-link px-0 sideBarOpt"> <span class="d-none d-sm-inline">Item</span> 1 </a>
                                     </li>
                                     <li>
                                         <a href="#" class="nav-link px-0 sideBarOpt"> <span class="d-none d-sm-inline">Item</span> 2 </a>
                                     </li>
-                                </ul>
+                                </ul> -->
                             </li>
                             <li>
-                                <a href="#" class="nav-link px-0 align-middle sideBarOpt">
-                                    <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Orders</span></a>
-                            </li>
-                            <li>
-                                <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle sideBarOpt">
-                                    <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Bootstrap</span></a>
-                                <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
-                                    <li class="w-100">
-                                        <a href="#" class="nav-link px-0 sideBarOpt"> <span class="d-none d-sm-inline">Item</span> 1</a>
+                                <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle sideBarOpt">
+                                <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Stock Data</span></a>
+                                <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                                    <li class="w-100 addDashItemIndent">
+                                        <button onclick="" class="nav-link px-0 sideBarOpt"> <i id="stockLineClose" class="fs-6 bi-eye"></i> <span class="d-none d-sm-inline">Close</span></button>
                                     </li>
-                                    <li>
-                                        <a href="#" class="nav-link px-0 sideBarOpt"> <span class="d-none d-sm-inline">Item</span> 2</a>
+                                    <li class="addDashItemIndent">
+                                        <button class="nav-link px-0 sideBarOpt"> <i id="stockLineOpen" class="fs-6 bi-eye"></i> <span class="d-none d-sm-inline">Open</span></button>
+                                    </li>
+                                    <li class="addDashItemIndent">
+                                        <button class="nav-link px-0 sideBarOpt"> <i id="stockLineHigh" class="fs-6 bi-eye"></i> <span class="d-none d-sm-inline">High</span></button>
+                                    </li>
+                                    <li class="addDashItemIndent">
+                                        <button class="nav-link px-0 sideBarOpt"> <i id="stockLineLow" class="fs-6 bi-eye"></i> <span class="d-none d-sm-inline">Low</span></button>
                                     </li>
                                 </ul>
                             </li>
                             <li>
                                 <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle sideBarOpt">
-                                    <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Products</span> </a>
-                                    <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
-                                    <li class="w-100">
-                                        <a href="#" class="nav-link px-0 sideBarOpt"> <span class="d-none d-sm-inline">Product</span> 1</a>
+                                <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Properties</span> </a>
+                                <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+                                    <li class="">
+                                        <div class="">
+                                            <label for="Currency" class="form-label text-warning">Currency</label>
+                                            <select id="Currency" class="form-select">
+                                              <option selected>EUR €</option>
+                                              <option>CAD $</option>
+                                              <option>USD $</option>
+                                              <option>AUD $</option>
+                                              <option>BTC ₿</option>
+                                              <option>GPB £</option>
+                                              <option>KWD د.ك</option>
+                                              <option>YEN ¥</option>
+                                              <option>CNY ¥</option>
+                                              <option>INR ₹</option>
+                                              <option>RUB ₽</option>
+                                            </select>
+                                          </div>
                                     </li>
                                     <li>
-                                        <a href="#" class="nav-link px-0 sideBarOpt"> <span class="d-none d-sm-inline">Product</span> 2</a>
+                                        <div class="">
+                                            <label for="startDate">Start</label>
+                                            <input id="startDate" class="form-control" type="date" />
+                                        </div>
                                     </li>
                                     <li>
                                         <a href="#" class="nav-link px-0 sideBarOpt"> <span class="d-none d-sm-inline">Product</span> 3</a>
@@ -101,6 +121,14 @@
                                         <a href="#" class="nav-link px-0 sideBarOpt"> <span class="d-none d-sm-inline">Product</span> 4</a>
                                     </li>
                                 </ul>
+                            </li>
+                            <li>
+                                <a id="getStarted" href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle sideBarOpt">
+                                    <i class="fs-4 bi-plus-square"></i> <span class="ms-1 d-none d-sm-inline">New Stock Graph</span></a>
+                            </li>
+                            <li>
+                                <a id="getStarted" href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle sideBarOpt">
+                                    <i class="fs-4 bi-x-square"></i> <span class="ms-1 d-none d-sm-inline">Remove Graphs</span></a>
                             </li>
                         </ul>
                     </div>
@@ -111,12 +139,75 @@
                     <div class="col">
                         <h1 class="display-5" id="mainGraphTit"></h1>
                     </div>
-                <canvas class="chartjs-render-monitor" id="dashMainGraph" width="700" height="350"></canvas>
+                    <!-- Toast -->
+                    <div class="container position-relative" style="z-index: 11;">
+                        <div style="margin-top: 110px!important;" class="toast-container position-absolute start-50 translate-middle p-3" id="toastStockForm">
+                          <div class="toast hide" id="toastFormToggler">
+                            <!-- add get started btn toggle for show hide toast -->
+                            <div class="toast-header" >
+                              <!-- <img src="..." class="rounded me-2" alt="..."> -->
+                              <strong class="me-auto">Stock Form</strong>
+                              <button type="button" class="btn-close bg-warning" data-bs-dismiss="toast" id="toastFormCloser"></button>
+                              <!-- <small>11 mins ago</small> -->
+                            </div>
+                            <div class="p-3">
+                                <!-- form to pick from list of stocks (dropdown), start date, end date and the curency (dropdown)-->
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                      <label for="Stock" class="form-label">Stock</label>
+                                      <select id="Stock" class="form-select">
+                                        <option selected>Class III Milk Futures,Dec-2022 (DC=F)</option>
+                                        <option>Class IV Milk Futures,May-2023 (GDK=F)</option>
+                                        <option>Chicago SRW Wheat Futures,Mar-2 (ZW=F)</option>
+                                        <option>KC HRW Wheat Futures,Mar-2023 (KE=F)</option>
+                                        <option>KC HRW Wheat TAS Futures,Mar-20 (KET=F)</option>
+                                        <option>Mini-sized Chicago SRW Wheat Fu (XW=F)</option>
+                                        <option>Block Cheese Futures,Dec-2022 (BLK=F)</option>
+                                        <option>Rashtriya Chemicals and Fertilizers Limited (RCF.NS)</option>
+                                        <option>Gujarat Narmada Valley Fertilizers & Chemicals Limited (GNFC.NS)</option>
+                                      </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <label for="Currency" class="form-label">Currency</label>
+                                      <select id="Currency" class="form-select">
+                                        <option selected>EUR €</option>
+                                        <option>CAD $</option>
+                                        <option>USD $</option>
+                                        <option>AUD $</option>
+                                        <option>BTC ₿</option>
+                                        <option>GPB £</option>
+                                        <option>KWD د.ك</option>
+                                        <option>YEN ¥</option>
+                                        <option>CNY ¥</option>
+                                        <option>INR ₹</option>
+                                        <option>RUB ₽</option>
+                                      </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="startDate">Start</label>
+                                        <input id="startDate" class="form-control" type="date" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="endDate">End</label>
+                                        <input id="endDate" class="form-control" type="date" />
+                                    </div>
+                                    <div>
+                                      <button id="loadGraphFromForm" class="btn btn-primary">View in Dash</button>
+                                    </div>
+                                </div>        
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                <canvas class="chartjs-render-monitor mainGraphResizer" id="dashMainGraph"></canvas>
+                <canvas class="chartjs-render-monitor mainGraphResizer" id="dashMainGraphBar"></canvas>
             </div>
         </div>
     </div>
     <script scr="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
     <script src="https://unpkg.com/@adminkit/core@latest/dist/js/app.js"></script>   
-    <script type="module" src="/src/graphMakers/createDashGraph.js"></script>    
+    <script type="module" src="/src/graphMakers/createDashGraph.js"></script>
+    <script type="module" src="src/apiGetters/getDataFromForm.js"></script>
+    <script src="/src/util/toastViewerDetatched.js"></script>
 </body>
 

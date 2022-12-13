@@ -89,4 +89,16 @@ body{
     color: #e6ae15!important;
 }
 
+/* when screen is smaller then 720 make canvas #mainGraphResizer height 450 */
+@media screen and (max-width: 720px) {
+    #mainGraphResizer{
+        height: 4500px;
+    }
+}
+
+.addDashItemIndent{
+    margin-left: 10px;
+}
+
+
 

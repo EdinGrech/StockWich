@@ -15,7 +15,9 @@ function createChart(){
     });
     console.log(info.stockDataClose);
     document.getElementById("mainGraphTit").innerHTML = info.Stock + " in " + info.Currency;
-    new Chart(document.getElementById("dashMainGraph"), {
+
+    setCanvasSize()
+    let mainLine = new Chart(document.getElementById("dashMainGraph"), {
         type: "line",
         data: {
             labels: info.stockDataLabelsDate,
@@ -33,6 +35,22 @@ function createChart(){
                 borderColor: "rgb(178, 49, 218)",
                 borderDash: [18, 3],
                 data: info.stockDataOpen,
+            },
+            {
+                label: "High Price",
+                fill: true,
+                backgroundColor: "transparent",
+                borderColor: "rgb(96, 235, 41)",
+                borderDash: [30, 5],
+                data: info.stockDataHigh,
+            },
+            {
+                label: "Low Price",
+                fill: true,
+                backgroundColor: "transparent",
+                borderColor: "rgb(230, 84, 65)",
+                borderDash: [30, 5],
+                data: info.stockDataLow,
             }
         ]
         },
@@ -60,6 +78,43 @@ function createChart(){
             },
         }
     });
+
+    let mainBar = new Chart(document.getElementById("dashMainGraphBar"), {
+        type: "bar",
+        data: {
+          labels: info.stockDataLabelsDate,
+          datasets: [
+            {
+            label: "Volume of Stock",
+            backgroundColor: window.theme.primary,
+            borderColor: window.theme.primary,
+            hoverBackgroundColor: window.theme.primary,
+            hoverBorderColor: window.theme.primary,
+            data: info.stockDataVolume,
+            barPercentage: .75,
+            categoryPercentage: .5
+          }, 
+        ]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              gridLines: {
+                display: false
+              },
+              stacked: false
+            }],
+            xAxes: [{
+              stacked: false,
+              gridLines: {
+                color: "transparent"
+              }
+            }]
+          }
+        }
+      });
+
+      return {mainLine, mainBar};
 }
 
 function constructData(){
@@ -103,17 +158,44 @@ function constructData(){
     let stockDataLabelsDate = [];
     let stockDataClose = [];
     let stockDataOpen = [];
+    let stockDataHigh = [];
+    let stockDataLow = [];
+    let stockDataVolume = [];
+
     for (let i = 0; i < stockData.data.length; i++) {
         stockDataLabelsDate.push(stockData.data[i].Date);
-        //change date format
         stockDataLabelsDate[i] = new Date(stockDataLabelsDate[i]).toLocaleDateString();
         stockDataClose.push(stockData.data[i].Close);
         stockDataOpen.push(stockData.data[i].Open);
+        stockDataHigh.push(stockData.data[i].High);
+        stockDataLow.push(stockData.data[i].Low);
+        stockDataVolume.push(stockData.data[i].Volume);
     }
     console.log(stockDataLabelsDate);
     console.log(stockDataClose);
 
-    return {stockDataLabelsDate, stockDataClose, stockDataOpen, Stock, Currency, startDate, endDate};
+    return {stockDataLabelsDate, stockDataClose, stockDataOpen, stockDataHigh, stockDataLow, stockDataVolume, Stock, Currency, startDate, endDate};
 }
 
-createChart();
+function setCanvasSize(){
+    //clear width and height
+    let canvas = document.getElementById("dashMainGraph");
+    canvas.width = 0;
+    canvas.height = 0;
+    canvas.width = window.innerWidth;
+    canvas.height = (2*window.innerHeight)/3;
+    canvas = document.getElementById("dashMainGraphBar");
+    canvas.width = 0;
+    canvas.height = 0;
+    canvas.width = window.innerWidth;
+    canvas.height = (2*window.innerHeight)/3;
+}
+
+let mainGraphs = createChart();
+
+window.addEventListener("resize", function(){
+    setCanvasSize();
+    mainGraphs.mainLine.destroy();
+    mainGraphs.mainBar.destroy();
+    mainGraphs = createChart();
+});
