@@ -100,5 +100,12 @@ body{
     margin-left: 10px;
 }
 
+.dropDownMargenCorrect{
+    margin-bottom: -30px!important;
+}
+
+.animationSmoother{
+    transition: all 1s ease-in-out;
+}
 
 

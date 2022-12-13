@@ -46,18 +46,18 @@
       <div class="container-fluid">
         <div class="row flex-nowrap">
             <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
-                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <div class="d-flex flex-column align-items-start align-items-sm-start px-3 pt-2 text-white min-vh-100">
                     <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                         <span class="fs-5 d-none d-sm-inline">Menu</span>
                     </a>
-                        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start align-items-sm-start" id="menu">
                             <!-- <li class="nav-item">
                                 <a href="#" class="nav-link align-middle px-0 sideBarOpt">
                                     <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
                                 </a>
                             </li> -->
                             <li>
-                                <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle sideBarOpt">
+                                <a href="" data-bs-toggle="collapse" class="nav-link px-0 align-middle sideBarOpt">
                                     <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
                                 <!-- <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
                                     <li class="w-100">
@@ -71,8 +71,20 @@
                             <li>
                                 <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle sideBarOpt">
                                 <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Stock Data</span></a>
-                                <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                                <ul class="collapse nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
                                     <li class="w-100 addDashItemIndent">
+                                        <button onclick="" class="nav-link px-0 sideBarOpt"> <i id="stockLineClose" class="fs-6 bi-eye"></i> <span class="d-sm-inline">Close</span></button>
+                                    </li>
+                                    <li class="addDashItemIndent">
+                                        <button class="nav-link px-0 sideBarOpt"> <i id="stockLineOpen" class="fs-6 bi-eye"></i> <span class=" d-sm-inline">Open</span></button>
+                                    </li>
+                                    <li class="addDashItemIndent">
+                                        <button class="nav-link px-0 sideBarOpt"> <i id="stockLineHigh" class="fs-6 bi-eye"></i> <span class=" d-sm-inline">High</span></button>
+                                    </li>
+                                    <li class="addDashItemIndent">
+                                        <button class="nav-link px-0 sideBarOpt"> <i id="stockLineLow" class="fs-6 bi-eye"></i> <span class="d-sm-inline">Low</span></button>
+                                    </li>
+                                    <!-- <li class="w-100 addDashItemIndent">
                                         <button onclick="" class="nav-link px-0 sideBarOpt"> <i id="stockLineClose" class="fs-6 bi-eye"></i> <span class="d-none d-sm-inline">Close</span></button>
                                     </li>
                                     <li class="addDashItemIndent">
@@ -83,16 +95,16 @@
                                     </li>
                                     <li class="addDashItemIndent">
                                         <button class="nav-link px-0 sideBarOpt"> <i id="stockLineLow" class="fs-6 bi-eye"></i> <span class="d-none d-sm-inline">Low</span></button>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </li>
                             <li>
-                                <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle sideBarOpt">
+                                <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle sideBarOpt">
                                 <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Properties</span> </a>
-                                <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
-                                    <li class="">
-                                        <div class="">
-                                            <label for="Currency" class="form-label text-warning">Currency</label>
+                                <ul class="collapse nav flex-column ms-1 animationSmoother" id="submenu2" data-bs-parent="#menu">
+                                    <li class="pe-2">
+                                        <div class="" style="width: 50px;">
+                                            <label for="Currency" class="form-label text-warning dropDownMargenCorrect">Currency</i></label>
                                             <select id="Currency" class="form-select">
                                               <option selected>EUR €</option>
                                               <option>CAD $</option>
@@ -108,26 +120,30 @@
                                             </select>
                                           </div>
                                     </li>
-                                    <li>
-                                        <div class="">
-                                            <label for="startDate">Start</label>
+                                    <li class="pt-2">
+                                        <div class="" style="width: 50px;">
+                                            <label for="startDate" class="text-warning">Start</label>
                                             <input id="startDate" class="form-control" type="date" />
                                         </div>
                                     </li>
-                                    <li>
-                                        <a href="#" class="nav-link px-0 sideBarOpt"> <span class="d-none d-sm-inline">Product</span> 3</a>
+                                    <li class="pt-2">
+                                        <div class="" style="width: 50px;">
+                                            <label for="endDate" class="text-warning">End</label>
+                                            <input id="endDate" class="form-control" type="date" />
+                                        </div>
                                     </li>
-                                    <li>
-                                        <a href="#" class="nav-link px-0 sideBarOpt"> <span class="d-none d-sm-inline">Product</span> 4</a>
+                                    <li class="pt-sm-2 pt-4">
+                                        <label class="d-none d-sm-block text-warning pb-1">Update Graph</label>
+                                        <button class="btn btn-primary" style="width: 50px;"><i class="bi-upload"></i></button>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <a id="getStarted" href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle sideBarOpt">
+                                <a id="getStarted" data-bs-toggle="collapse" class="nav-link px-0 align-middle sideBarOpt">
                                     <i class="fs-4 bi-plus-square"></i> <span class="ms-1 d-none d-sm-inline">New Stock Graph</span></a>
                             </li>
                             <li>
-                                <a id="getStarted" href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle sideBarOpt">
+                                <a id="getStarted" data-bs-toggle="collapse" class="nav-link px-0 align-middle sideBarOpt">
                                     <i class="fs-4 bi-x-square"></i> <span class="ms-1 d-none d-sm-inline">Remove Graphs</span></a>
                             </li>
                         </ul>
