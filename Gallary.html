@@ -1,0 +1,190 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <!-- <link rel="stylesheet" href="/dist/css/app.css"> its breaking bootstrap styles-->
+    <title>StockWich</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <div class="">   
+                <a class="navbar-brand" href="#">
+                    <img src="styles/assets/sandwich-svgrepo-com.svg" class="mb-1 sandwichLogoNav" >
+                    StockWich
+                </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/Dash.html">Dash</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Gallary.html">Gallary</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+      </nav>
+    <!-- Navbar -->
+    <header>
+        <div class="p-3 bg-warning">
+            <h1 class="display-1" style="display: flex; justify-content: center!important;">Gallary</h1>
+        </div>
+    </header>
+      <!-- Gallary -->
+        <div class="pb-0">
+            <div id="carouselExampleControls" class="carousel slide carousel-dark" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                <div id="carouselImgCont" class="carousel-item active">
+                    <div class="row">
+                        <div class="col-4" style="display: flex; align-items: center!important; justify-content: center;overflow: hidden!important;">
+                            <img src="https://github.com/cat-milk/Anime-Girls-Holding-Programming-Books/blob/master/CSS/Sakurajima_Mai_Beginning_CSS.jpg?raw=true" class="imgFitHeight">
+                        </div>
+                        <div class="col-4" style="display: flex; align-items: center!important; justify-content: center;overflow: hidden!important;">
+                            <img src="https://github.com/cat-milk/Anime-Girls-Holding-Programming-Books/blob/master/CSS/Sae_Chabashira_CSS_Definitive_Guide.png?raw=true" class="imgFitHeight">
+                        </div>
+                        <div class="col-4" style="display: flex; align-items: center!important; justify-content: center;overflow: hidden!important;">
+                            <img src="https://github.com/cat-milk/Anime-Girls-Holding-Programming-Books/blob/master/CSS/Shima_Rin_Beginning_CSS.jpg?raw=true" class="imgFitHeight">
+                        </div>
+                    </div>
+                </div>
+                <div id="carouselImgCont" class="carousel-item">
+                    <div class="row">
+                        <div class="col-4" style="display: flex; align-items: center!important; justify-content: center;overflow: hidden!important;">
+                            <img src="https://github.com/cat-milk/Anime-Girls-Holding-Programming-Books/blob/master/Javascript/Akko_Reading_Beginning_Javascript.jpg?raw=true" class="imgFitHeight">
+                        </div>
+                        <div class="col-4" style="display: flex; align-items: center!important; justify-content: center;overflow: hidden!important;">
+                            <img src="https://github.com/cat-milk/Anime-Girls-Holding-Programming-Books/blob/master/Javascript/Chisaki_Tapris_Holding_JavaScript_Scope_and_Closure.png?raw=true" class="imgFitHeight">
+                        </div>
+                        <div class="col-4" style="display: flex; align-items: center!important; justify-content: center;overflow: hidden!important;">
+                            <img src="https://github.com/cat-milk/Anime-Girls-Holding-Programming-Books/blob/master/Javascript/Doma_Umaru_Java_Script_The_Good_Parts.png?raw=true" class="imgFitHeight">
+                        </div>
+                    </div>
+                </div>
+                <div id="carouselImgCont" class="carousel-item">
+                    <div class="row">
+                        <div class="col-4" style="display: flex; align-items: center!important; justify-content: center;overflow: hidden!important;">
+                            <img src="https://github.com/cat-milk/Anime-Girls-Holding-Programming-Books/blob/master/Javascript/Felix_Argyle_Scared_By_JavaScript_The_Good_Parts.png?raw=true" class="imgFitHeight">
+                        </div>
+                        <div class="col-4" style="display: flex; align-items: center!important; justify-content: center;overflow: hidden!important;">
+                            <img src="https://github.com/cat-milk/Anime-Girls-Holding-Programming-Books/blob/master/Javascript/Ikuno_Holding_Javascript_The_Definitive_Guide.png?raw=true" class="imgFitHeight">
+                        </div>
+                        <div class="col-4" style="display: flex; align-items: center!important; justify-content: center;overflow: hidden!important;">
+                            <img src="https://github.com/cat-milk/Anime-Girls-Holding-Programming-Books/blob/master/Javascript/Kanon_Shibuya_Holds_Javascript_And_Jquery_Portuguese.png?raw=true" class="imgFitHeight">
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    
+        <div class="pb-0">
+            <div id="cara1" class="carousel slide carousel-dark" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                <div id="carouselImgCont" class="carousel-item active">
+                    <div class="row">
+                        <div class="col-4" style="display: flex; align-items: center!important; justify-content: center;overflow: hidden!important;">
+                            <img src="https://github.com/cat-milk/Anime-Girls-Holding-Programming-Books/blob/master/Javascript/Korone_JavaScript_jQuery_Murachs_Fourth.png?raw=true" class="imgFitHeight">
+                        </div>
+                        <div class="col-4" style="display: flex; align-items: center!important; justify-content: center;overflow: hidden!important;">
+                            <img src="https://github.com/cat-milk/Anime-Girls-Holding-Programming-Books/blob/master/Javascript/Monogatari_Shinobu_Speaking_Javascript.png?raw=true" class="imgFitHeight">
+                        </div>
+                        <div class="col-4" style="display: flex; align-items: center!important; justify-content: center;overflow: hidden!important;">
+                            <img src="https://github.com/cat-milk/Anime-Girls-Holding-Programming-Books/blob/master/Javascript/Maya_Yamato_Holding_Javascript_For_Absolute_Beginners.png?raw=true" class="imgFitHeight">
+                        </div>
+                    </div>
+                </div>
+                <div id="carouselImgCont" class="carousel-item">
+                    <div class="row">
+                        <div class="col-4" style="display: flex; align-items: center!important; justify-content: center;overflow: hidden!important;">
+                            <img src="https://github.com/cat-milk/Anime-Girls-Holding-Programming-Books/blob/master/Javascript/Ram_Holding_JavaScript_The_Good_Parts.png?raw=true" class="imgFitHeight">
+                        </div>
+                        <div class="col-4" style="display: flex; align-items: center!important; justify-content: center;overflow: hidden!important;">
+                            <img src="https://github.com/cat-milk/Anime-Girls-Holding-Programming-Books/blob/master/Javascript/Ogino_Chihiro_Holding_Professional_Javascript_For_Web_Developers.png?raw=true" class="imgFitHeight">
+                        </div>
+                        <div class="col-4" style="display: flex; align-items: center!important; justify-content: center;overflow: hidden!important;">
+                            <img src="https://github.com/cat-milk/Anime-Girls-Holding-Programming-Books/blob/master/Javascript/Shamiko_Reading_Speaking_Javascript.png?raw=true" class="imgFitHeight">
+                        </div>
+                    </div>
+                </div>
+                <div id="carouselImgCont" class="carousel-item">
+                    <div class="row">
+                        <div class="col-4" style="display: flex; align-items: center!important; justify-content: center;overflow: hidden!important;">
+                            <img src="https://github.com/cat-milk/Anime-Girls-Holding-Programming-Books/blob/master/Javascript/Suzuran_Holding_Eloquent_Javascript.jpg?raw=true" class="imgFitHeight">
+                        </div>
+                        <div class="col-4" style="display: flex; align-items: center!important; justify-content: center;overflow: hidden!important;">
+                            <img src="https://github.com/cat-milk/Anime-Girls-Holding-Programming-Books/blob/master/Javascript/Tamaki_Mari_Holding_Eloquent_JavaScript.jpg?raw=true" class="imgFitHeight">
+                        </div>
+                        <div class="col-4" style="display: flex; align-items: center!important; justify-content: center;overflow: hidden!important;">
+                            <img src="https://github.com/cat-milk/Anime-Girls-Holding-Programming-Books/blob/master/Javascript/Tohsaka_Rin_Holding_JS_For_Dummies.png?raw=true" class="imgFitHeight">
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#cara1" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#cara1" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="p-2 bg-primary">
+            <h1 class="display-3 text-white" style="display: flex; justify-content: center!important;">Our Faves</h1>
+        </div>
+
+        <div class="pb-4">
+            <div id="cara2" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="styles/assets/undraw_tasting_re_3k5a.svg" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="styles/assets/undraw_tasting_re_3k5a.svg" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="styles/assets/undraw_tasting_re_3k5a.svg" class="d-block w-100">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#cara2" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#cara2" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    
+    <!-- SB Forms JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

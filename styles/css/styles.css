@@ -112,3 +112,13 @@ body{
     margin-top: -18px!important;
 }
 
+#carouselImgCont{
+    align-items: center;
+    justify-content: center;
+    height: auto;
+}
+
+.imgFitHeight{
+    height: 150px;
+    width: auto;
+}
