@@ -119,6 +119,12 @@ body{
 }
 
 .imgFitHeight{
-    height: 150px;
-    width: auto;
+    padding: 0;
+    height: fill-available;
+    width: 100%;
+}
+
+.caraColItemOverWrite{
+    padding: 0!important;
+    height: 30vh!important;
 }
