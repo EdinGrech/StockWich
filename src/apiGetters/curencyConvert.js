@@ -68,9 +68,10 @@ export async function convertCurrency(toCurrency) {
             //time = new Date(time*1000);
             console.log(exchangeRate, time*1000, Date.now());
             // make time a date object
-            // if(data.timestamp*1000 + 36000000 < Date.now()){
-            //     throw new Error("Exchange rates are older than 3 days");
-            // }
+            if((data.timestamp*1000) + 360000000 < Date.now()){
+                console.log("exchange rates are older than 3 days");
+                throw new Error("Exchange rates are older than 3 days");
+            }
             return { exchangeRate, time };
         }
         else{

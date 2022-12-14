@@ -15,6 +15,13 @@ document.getElementById("changeGraphWithNewProperties").onclick = function() {
 }
 
 document.getElementById("removeDataStored").onclick = function() {
-    localStorage.clear();
+    //localStorage.clear();
+    //lovalstorage remove everything except the exchange rates
+    localStorage.removeItem('Currency');
+    localStorage.removeItem('startDate');
+    localStorage.removeItem('endDate');
+    localStorage.removeItem('Stock');
+    localStorage.removeItem('stockData');
+    
     document.location.reload();
 }
