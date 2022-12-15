@@ -128,3 +128,12 @@ body{
     padding: 0!important;
     height: 30vh!important;
 }
+
+/* screen smaller then 1200px */
+@media screen and (max-width: 1200px) {
+    .imgFitHeight{
+        scale: 0.35;
+        width: auto!important;
+        height: fit-content!important;
+    }
+}
