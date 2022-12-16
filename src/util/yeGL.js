@@ -7,15 +7,25 @@ const animateMove = (element, prop, pixels) =>
   anime({
     targets: element,
     [prop]: `${pixels}px`,
-    easing: "easeOutCirc",
+    easing: "easeInOutQuad",
   });
 
-["mouseover", "click"].forEach(function (el) {
+["mouseover", "click", "hover"].forEach(function (el) {
 //add checking condition here
   button.addEventListener(el, function (event) {
-    let left = getRandomNumber(cont.offsetWidth - this.offsetWidth)+cont.offsetLeft + this.offsetWidth/2;
-    if(window.innerWidth > 768) {
-    animateMove(this, "left", left).play();
+    if(button.classList.contains("text-success")) {
+      if(el=="click"){
+        alert("congraz but this dose nothing");
+        return;
+      }
+      return;
+    }
+    else
+    {
+      let left = getRandomNumber(cont.offsetWidth - this.offsetWidth)+cont.offsetLeft + this.offsetWidth/2;
+      if(window.innerWidth > 768) {
+        animateMove(this, "left", left).play();
+      }
     }
   });
 });
